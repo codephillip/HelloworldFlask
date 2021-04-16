@@ -16,6 +16,20 @@ bookslist = [
     }
 ]
 
+
+movies = [
+    {
+        "id": 1,
+        "title": "Inception",
+        "actor": "Decaprio"
+    },
+    {
+        "id": 2,
+        "name": "Xmen",
+        "author": "Xmen guys"
+    }
+]
+
 # decorator
 @app.route('/')
 def hello_world():
@@ -26,6 +40,11 @@ def hello_world():
 @app.route('/books', methods=['GET'])
 def get_books():
     return jsonify({"books": bookslist})
+
+
+@app.route('/movies', methods=['GET'])
+def get_movies():
+    return jsonify({"movies": movies})
 
 
 # add resource
